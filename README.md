@@ -5,6 +5,8 @@
 
 ###**Initializing CanLoad** 
 
+  Download: [Developement Copy](https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.js) - [Production Copy](https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.min.js)
+
 
 ```js
   <div id="ajax">
