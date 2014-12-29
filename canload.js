@@ -30,15 +30,21 @@ function canLoad(style, op) {
             i: '3',
             t: '97'
           };
-      if (op.speed.toLowerCase() == 'fast') {
-        s.i = 7;
-        s.t = 93;
-      } else if (op.speed.toLowerCase() == 'medium') {
+      
+      if(op.speed){
+        if (op.speed.toLowerCase() == 'fast') {
+          s.i = 7;
+          s.t = 93;
+        } else if (op.speed.toLowerCase() == 'medium') {
+          s.i = 2;
+          s.t = 98;
+        } else if (op.speed.toLowerCase() == 'slow') {
+          s.i = 0.5;
+          s.t = 99.5;
+        }
+      } else {
         s.i = 2;
         s.t = 98;
-      } else if (op.speed.toLowerCase() == 'slow') {
-        s.i = 0.5;
-        s.t = 99.5;
       }
       function dir() {
         window.requestAnimationFrame(dir);

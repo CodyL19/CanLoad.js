@@ -2,16 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>CanLoad.js - An Html5 Canvas based loader.</title>
-    <link href="genAssets/style.css" type="text/css" rel="stylesheet">
+    <title>Generator | CanLoad.js</title>
+    <link href="assets/style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-    <header></header>
+    <header>
+      <div id="wrap">
+        <div id="name">CanL<span class="hidden-o">o</span><span id="o" alt="0" style=""></span>ad<span>.js</span></div>
+      </div>
+    </header>
     <main>
-    
+      <br/>
+      <div id="loader_preview">
+        <div id="loader">
+          <!-- Loader goes here -->
+        </div>
+      </div>
+      <div id="options">
+      
+      </div>
     </main>
-    <footer>&copy;2014 CanLoad is under an <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/LICENCE.txt">MIT License</a> for free use.</footer>
-    <script src="genAssets/script.js"></script>
+    <footer class="center">&copy;2014 CanLoad is under an <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/LICENCE.txt" target="_BLANK">MIT License</a> for free use.</footer>
+    <script src="assets/script.js"></script>
     <script src="canload.min.js"></script>
+    <script>canLoad('chrome', {id:'o', speed:'medium', length:'5', color:'#3bbbff', size:'15', line:'4', bg:{ color:"#fff" }})</script>
+    <script>
+      canLoad('line', {id:'loader'});
+    </script>
   </body>
 </html>
