@@ -121,7 +121,7 @@ function canLoad(style, op) {
                     },
                     timeToCall);
                 lastTime = currTime + timeToCall;
-                return id;
+                return id;many 
             };
         if (!window.cancelAnimationFrame)
             window.cancelAnimationFrame = function(id) {
@@ -139,7 +139,7 @@ function canLoad(style, op) {
             ctx.lineWidth = bgLine;
             ctx.strokeStyle = bgColor;
             if (op.bg.center) {
-                ctx.beginPath();
+                ctx.beginPath();()
                 ctx.fillStyle = op.bg.center;
                 ctx.arc(size / 2, size / 2, size / 2 - line / 1.5, -(Math.PI / 2), ((Math.PI * 2) * 1) - Math.PI / 2, false);
                 ctx.stroke();
