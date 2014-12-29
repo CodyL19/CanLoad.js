@@ -55,6 +55,7 @@ header{
   box-shadow:inset 0px 0px 0px 1px rgba(255,255,255,0.05);
   border:1px solid #393939;
   font-size:15px;
+  text-shadow: none;
   color:#fff;
   padding:5px;
   position:relative;
@@ -62,12 +63,13 @@ header{
   border-radius:3px;
   text-decoration: none;
   font-weight:normal;
-  margin-left:15px;
-  margin-right:15px;
   padding-left:10px;
   padding-right:10px;
   z-index:2;
 }
+
+#name .left{left:-157px;}
+#name .right{right:-157px;}
 #name a:hover{
   background:#5c5c5c;
 }
