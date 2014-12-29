@@ -55,6 +55,7 @@ function canLoad(style, op) {
                     direction = true;
                 }
                 var cur = current / 100;
+                //document.getElementById('debug').innerHTML = cur;
                 bg();
                 ctx.lineCap = 'round';
                 ctx.lineWidth = line;
@@ -82,29 +83,21 @@ function canLoad(style, op) {
                 ctx.stroke();
                 ctx.closePath();
             }
-
             dir();
         },
         bubble: function() {
-
         }
     }
-
     if (style && type.hasOwnProperty(style)) {
         type[style]();
     } else {
         type.line();
     }
-
-    //console.log(imd);
     ctx.putImageData(imd, 0, 0);
-
     function isInt(value) {
         var x = parseFloat(value);
         return !isNaN(value) && (x | 0) === x;
     }
-
-
     (function() {
         var lastTime = 0;
         var vendors = ['ms', 'moz', 'webkit', 'o'];
