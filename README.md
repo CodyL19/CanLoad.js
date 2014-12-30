@@ -3,9 +3,12 @@
 
 ---
 
+#####Quickly customize your loader with the [genorator](http://codyl19.github.io/CanLoad.js/)
+----
+
 ###**Initializing CanLoad** 
 
-  Download: [Developement Copy](https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.js) - [Production Copy](https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.min.js)
+  Download: [Development Copy](https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.js) - [Production Copy](https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.min.js)
 
 
 ```js
