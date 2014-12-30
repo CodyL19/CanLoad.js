@@ -4,31 +4,156 @@
     <meta charset="utf-8"/>
     <title>Generator | CanLoad.js</title>
     <link href="assets/style.css" type="text/css" rel="stylesheet">
+    <link href="assets/prism.css" type="text/css" rel="stylesheet">
   </head>
   <body>
     <header>
       <div id="wrap">
         
-        <div id="name"><a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.min.js" class="left" target="_blank">Production code</a> CanL<span class="hidden-o">o</span><span id="o" alt="0" style=""></span>ad<span>.js</span> <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.js" class="right" target="_blank">Development code</a></div>
+        <div id="name">
+          <span class="left">Preveiw</span> 
+          CanL<span class="hidden-o">o</span><span id="o" alt="0" style=""></span>ad<span>.js</span> 
+          <span class="right">Customize</span></div>
       </div>
     </header>
     <main>
       <br/>
-      <div id="loader_preview">
-        <div id="loader">
-          <!-- Loader goes here -->
+      <div class="flex">
+        <div id="loader_preview">
+          <input type="text" class="preview_bg" value="#FFFFFF">
+          <div id="loader">
+            <!-- Loader goes here -->
+          </div>
+        </div>
+        <div id="options">
+          <table cellSpacing="0">
+            <tr>
+              <td></td>
+              <td><b>Main Options:</b></td>
+              <td></td>
+              <td><b>BG Options:</b></td>
+            </tr>
+            <tr>
+              <td>Styles:</td> 
+              <td><select class="styles"><option>Line</option><option>Chrome</option></select></td>
+              
+              <td>Color:</td>
+              <td><input type="text" value="" id="bg-color" onclick="this.focus();this.select()"></td>
+            </tr>
+            <tr>
+              <td>Color:</td>
+              <td><input type="text" value="#333333" id="spinner-color" onclick="this.focus();this.select()"></td>
+              
+              <td>Center:</td>
+              <td><input type="text" value="" id="center-color" onclick="this.focus();this.select()"></td>
+            </tr>
+            <tr>
+              <td>Speed:</td>
+              <td><select class="speed"><option>Fast</option><option selected>Medium</option><option>Slow</option></select></td>
+              
+              <td>Line:</td>
+              <td><input type="number" min="1" max="50" value="" id="bgLine" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onclick="this.focus();this.select()"></td>
+            </tr>
+            <tr>
+              <td>Size:</td>
+              <td><input type="number" min="1" max="400" value="40" id="size" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onclick="this.focus();this.select()"></td>
+            </tr>
+            <tr>
+              <td>Line:</td>
+              <td><input type="number" min="1" max="50" value="2" id="line" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onclick="this.focus();this.select()"></td>
+            </tr>
+            <tr style="display:none;" id="len">
+              <td>Length:</td>
+              <td><input type="number" min="1" max="100" value="25" id="length" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onclick="this.focus();this.select()"></td>
+            </tr>
+          </table>
+          <pre style="max-width:350px !important; margin-top:17px;"><code id ="code" class="language-javascript code">canLoad('line', {
+    id:'elm', // Where to place the loader 
+    speed:'medium',
+    color:'#333333', 
+    size:'40', 
+    line:'2'
+});</code></pre>
+          
+          <span>
+            <span style="position: relative; top: 12px; font-weight: 600;">Don't forget! &rarr;</span>
+            <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.min.js" target="_blank" class="btn" style="margin-left:25px;">CanLoad.min.js</a>
+            <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.js" target="_blank" class="btn" style="margin-left:15px;">CanLoad.js</a>
+          </span>
         </div>
       </div>
-      <div id="options">
-      
-      </div>
     </main>
-    <footer class="center">&copy;2014 CanLoad is under an <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/LICENCE.txt" target="_BLANK">MIT License</a> for free use. - Created and maintained by: <a href="https://github.com/CodyL19" target="_blank">CodyL19</a></footer>
+    <footer class="center">&copy;2014 CanLoad is under an <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/LICENCE.txt" target="_BLANK">MIT License</a> for free use. - Created and maintained by: <a href="https://github.com/CodyL19" target="_blank">CodyL19</a></br>
+    View this project on <a href="https://github.com/CodyL19/CanLoad.js" target="_blank">GitHub</a>.
+    </footer>
+    <script src="assets/jquery.js"></script>
     <script src="assets/script.js"></script>
     <script src="canload.min.js"></script>
-    <script>canLoad('chrome', {id:'o', speed:'medium', length:'5', color:'#3bbbff', size:'15', line:'4', bg:{ color:"#fff" }})</script>
+    <script src="assets/prism.js"></script>
+    <script>canLoad('chrome', {id:'o', speed:'medium', length:'5', color:'#3bbbff', size:'15', line:'4', bg:{ color:"#fff" }});</script>
     <script>
       canLoad('line', {id:'loader'});
+      
+      var options = { style: 'line', speed: 'medium', color: '#333333', size: '40', line: '2',  bgColor: '', bgCenter: '', bgLine: '', length: '25' },
+            ob = options;
+      
+      $(".styles").change(function() { ob.style = $(".styles option:selected").val(); update(ob); });
+      $(".speed").change(function() { ob.speed = $(".speed option:selected").val(); update(ob); });
+      $("#size").blur(function(){ ob.size = $(this).val(); update(ob); });
+      $("#spinner-color").blur(function(){ ob.color = $("#spinner-color").val(); update(ob); });
+      $("#line").blur(function(){ ob.line = $("#line").val(); update(ob); });
+      $("#bgLine").blur(function(){ ob.bgLine = $("#bgLine").val(); update(ob); });
+      $("#bg-color").blur(function(){ ob.bgColor = $("#bg-color").val(); update(ob); });
+      $("#center-color").blur(function(){ ob.bgCenter = $("#center-color").val(); update(ob); });
+      $("#length").blur(function(){ ob.length = $(this).val(); update(ob); });
+      
+      $(".preview_bg").blur(function(){$('#loader_preview').css({background: $(this).val()}); });
+      
+      function update(ob){
+        
+        //console.log(ob.style, ob.speed, ob.color, ob.line, ob.size, ob.bgLine, ob.bgColor, ob.bgCenter);
+        var bg = "";
+        if(ob.bgColor || ob.bgCenter || ob.bgLine){
+          
+          var bgColor = (ob.bgColor)?"\n\t\tcolor:'"+ob.bgColor+"'" : '';
+          var bgCenter = (ob.bgCenter)?"\n\t\tcenter:'"+ob.bgCenter+"'" : '';
+          var bgLine = (ob.bgLine)?"\n\t\tline:'"+ob.bgLine+"'" : '';
+          
+          bg = ",\n\tbg:{"+ bgColor + bgCenter + bgLine +"\n\t}";
+        }
+        
+        ob.style = ob.style.toLowerCase();
+        
+        var length = '';
+        
+        if(ob.style == "chrome"){
+          $('#len').show();
+          
+          length = ",\n\tlength:'"+ob.length+"'";
+          
+        } else {$('len').hide();}
+        
+        var code = "canLoad('"+ob.style+"', {\n\tid:'elm', // Where to place the loader\n\tspeed:'"+ob.speed+"',\n\tcolor:'"+ob.color+"',\n\tsize:'"+ob.size+"',\n\tline:'"+ob.line+"'"+length+""+bg+"\n});";
+        //console.log(code);
+        $('.code').html(code);
+        Prism.highlightElement($('#code')[0]);
+        
+        canLoad(ob.style, {
+          id: 'loader',
+          color: ob.color,
+          speed: ob.speed,
+          size: ob.size,
+          line: ob.line,
+          length: ob.length,
+          bg: {
+            color: ob.bgColor,
+            line: ob.bgLine,
+            center: ob.bgCenter
+          }
+        });
+        
+      }
+      
     </script>
   </body>
 </html>
