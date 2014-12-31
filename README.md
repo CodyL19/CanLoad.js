@@ -3,7 +3,7 @@
 
 ---
 
-#####Quickly customize your loader with the [genorator](http://codyl19.github.io/CanLoad.js/)
+#####Quickly customize your loader with the [generator](http://codyl19.github.io/CanLoad.js/)
 ----
 
 ###**Initializing CanLoad** 
