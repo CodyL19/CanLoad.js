@@ -4,7 +4,6 @@
     <meta charset="utf-8"/>
     <title>Generator | CanLoad.js</title>
     <link href="assets/style.css" type="text/css" rel="stylesheet">
-    <link href="assets/prism.css" type="text/css" rel="stylesheet">
     <link href="assets/spectrum.css" type="text/css" rel="stylesheet">
   </head>
   <body>
@@ -20,11 +19,14 @@
     <main>
       <br/>
       <div class="flex">
+        <div>
         <div id="loader_preview">
           <input type="text" class="preview_bg" value="#FFFFFF">
           <div id="loader">
             <!-- Loader goes here -->
           </div>
+        </div>
+          <div id="share">Share your spinner: <input type="text"></div>
         </div>
         <div id="options">
           <table cellSpacing="0">
@@ -50,7 +52,7 @@
             </tr>
             <tr>
               <td>Speed:</td>
-              <td><select class="speed"><option>Fast</option><option selected>Medium</option><option>Slow</option></select></td>
+              <td><select class="speed"><option selected>Fast</option><option>Medium</option><option>Slow</option></select></td>
               
               <td>Line:</td>
               <td><input type="number" min="1" max="50" value="" id="bgLine"></td>
@@ -68,16 +70,16 @@
               <td><input type="number" min="1" max="100" value="25" id="length"></td>
             </tr>
           </table>
-          <pre style="max-width:350px !important; margin-top:17px;"><code id ="code" class="language-javascript code">canLoad('line', {
-    id:'elm', // Where to place the loader 
-    speed:'medium',
-    color:'#333333', 
-    size:'40', 
-    line:'2'
+          <pre style="max-width:350px !important; margin-top:17px;"><code id ="code" class="language-javascript code">canLoad(<span>'line'</span>, {
+    id:<span>'elm'</span>, <span class="c">// Where to place the loader</span> 
+    speed:<span>'medium'</span>,
+    color:<span>'#333333'</span>, 
+    size:<span>'40'</span>, 
+    line:<span>'2'</span>
 });</code></pre>
           
           <span>
-            <span style="position: relative; top: 12px; font-weight: 600;">Don't forget! &rarr;</span>
+            <span style="position: relative; top: 12px; font-weight: 600; left:15px;">Don't forget! &rarr;</span>
             <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.min.js" target="_blank" class="btn" style="margin-left:25px;">CanLoad.min.js</a>
             <a href="https://raw.githubusercontent.com/CodyL19/CanLoad.js/master/canload.js" target="_blank" class="btn" style="margin-left:15px;">CanLoad.js</a>
           </span>
@@ -90,7 +92,6 @@
     <script src="assets/jquery.js"></script>
     <script src="canload.min.js"></script>
     <script src="assets/script.js"></script>
-    <script src="assets/prism.js"></script>
     <script src="assets/spectrum.js"></script>
     <script>
       canLoad('chrome', {id:'o', speed:'medium', length:'5', color:'#3bbbff', size:'15', line:'4', bg:{ color:"#fff" }});

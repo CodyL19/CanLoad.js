@@ -4,6 +4,9 @@ body{
   background:url(greyzz.png);
   font-family:'Open Sans', sans-serif;
   margin:0;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
 }
 
 .preview_bg{
@@ -170,13 +173,76 @@ table td{
   font-weight: 600;
 }
 
-input{
-  width:100px;
-  padding:5px;
-  outline:none;
+.c{
+  color:slategray;
 }
 
-input{border-radius:2px;border:1px solid #aaa;padding:6px;}
+code span{
+  color:#3bbbff ;
+}
+
+pre{
+  font-size:12px;
+  background:#333638;
+  line-height:;
+  color:#f8f8f2;
+  padding:1em;
+  border-radius:2px;
+  border:1px solid #2c3434;
+  box-shadow:0px 3px 0px 0px #2c3434, inset 0px -2px 0px -1px rgba(255,255,255,0.06);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+}
+
+pre::-moz-selection, code::-moz-selection, code span::-moz-selection {
+  background:#2e3133;
+}
+
+pre::selection, code::selection, code span::selection {
+  background:rgba(255,255,255,0.08);
+}
+
+#share{
+  margin-top:20px;
+  margin-bottom:-20px;
+  font-size:13px;
+  font-weight:600;
+}
+
+#share input{
+  margin-left:10px;
+  width: 250px;
+  margin-right: -5px;
+}
+
+input{
+  width:106px;
+  padding:0px !important;
+  padding-left: 6px!important;
+  height: 27px;
+  outline:none;
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+}
+
+input{border-radius:2px;border:1px solid #aaa;}
 
 
 select{
